@@ -1,4 +1,6 @@
 import 'package:fancy_qr_generator/Qr_Generator.dart';
+import 'package:fancy_qr_generator/Result_Screen.dart';
+import 'package:fancy_qr_generator/Scanner.dart';
 import 'package:flutter/material.dart';
 
 class Home_Landing_Screen extends StatelessWidget {
@@ -8,11 +10,12 @@ class Home_Landing_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 255, 145, 0),
         centerTitle: true,
         title: const Text(
           'Fancy Qr Generator',
           style: TextStyle(
-            color: Colors.blueGrey,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
           ),
@@ -29,7 +32,7 @@ class Home_Landing_Screen extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
-                    minimumSize: const Size.fromHeight(50), // NEW
+                    minimumSize: const Size.fromHeight(50), 
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -39,6 +42,48 @@ class Home_Landing_Screen extends StatelessWidget {
                   },
                   child: const Text(
                     'Text to Qr Code',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 20,
+                ),
+
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.black,
+                //     minimumSize: const Size.fromHeight(50), 
+                //   ),
+                //   onPressed: () {
+                //     Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //             builder: (context) => MyScannedResult()));
+                //   },
+                //   child: const Text(
+                //     'Scanned Result Screen',
+                //     style: TextStyle(fontSize: 25),
+                //   ),
+                // ),
+                const SizedBox(
+                  height: 20,
+                ),
+
+
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    minimumSize: const Size.fromHeight(50), 
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MyScanner()));
+                  },
+                  child: const Text(
+                    'My Scanner Screen',
                     style: TextStyle(fontSize: 25),
                   ),
                 ),

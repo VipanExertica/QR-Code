@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fancy_qr_generator">
+    <uses-permission android:name="android.permission.CAMERA"/>
    <application
         android:label="fancy_qr_generator"
         android:name="${applicationName}"

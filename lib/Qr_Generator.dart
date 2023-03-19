@@ -17,11 +17,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: const Color.fromARGB(255, 255, 145, 0),
         centerTitle: true,
         title: const Text(
           'Fancy Qr Generator',
           style: TextStyle(
-            color: Colors.blueGrey,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
           ),
@@ -46,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Qr Code Generated Automatically",
-                          style: GoogleFonts.lobster(
+                      textAlign: TextAlign.center,
+                          style: GoogleFonts.lato(
                             textStyle: const TextStyle(
                               color: Color.fromARGB(255, 55, 0, 255),
                               fontSize: 24,
