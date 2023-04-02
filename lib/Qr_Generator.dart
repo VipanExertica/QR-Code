@@ -120,9 +120,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   "Share this App",
                 ),
               ),
-              const SizedBox(
-                height: 35,
-              )
             ],
           ),
         ),
