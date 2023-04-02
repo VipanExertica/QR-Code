@@ -2,6 +2,7 @@ import 'package:fancy_qr_generator/choice_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share/share.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -90,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     textAlign: TextAlign.center,
                     style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                     decoration: InputDecoration(
-                        hintText: "Type Here To Convert QR",
+                        hintText: "Type Here To Generate QR",
                         filled: true,
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
@@ -107,10 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               RawMaterialButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Home_Landing_Screen()));
+                  Share.share('Check out this Amazing Application that Automatically Generate And Scan Any QrCode');
                 },
                 fillColor: Colors.green,
                 shape: const StadiumBorder(),
@@ -119,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   vertical: 16.0,
                 ),
                 child: const Text(
-                  "Generate QR Code",
+                  "Share this App",
                 ),
               ),
               const SizedBox(

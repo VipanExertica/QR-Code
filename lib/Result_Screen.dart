@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:share/share.dart';
 
 class MyScannedResult extends StatelessWidget {
   final String scannedTextData;
@@ -17,7 +18,8 @@ class MyScannedResult extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             closeScreen();
-            Navigator.pop(context);
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+            closeScreen();
           },
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,

@@ -12,6 +12,10 @@ class MyScanner extends StatefulWidget {
 
 class _MyScannerState extends State<MyScanner> {
   bool isScanCompleted = false;
+  bool isFrontCamera = false;
+  bool isFlashOn = false;
+
+  MobileScannerController controller = MobileScannerController();
 
   void closeScreen() {
     isScanCompleted = false;
@@ -20,10 +24,41 @@ class _MyScannerState extends State<MyScanner> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Drawer(),
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () {
+            if(!isFlashOn && !isFrontCamera){
+              setState(() {
+              isFlashOn = true;
+              });
+              controller.toggleTorch();
+            }
+            else {
+              setState(() {
+                isFlashOn = false;
+              });
+              controller.toggleTorch();
+            }
+          }, icon: Icon(Icons.flash_on, color: isFlashOn?Colors.blue : Colors.black87,)),
+          IconButton(onPressed: () {
+            if(!isFrontCamera){
+            setState(() {
+              isFrontCamera = true;
+            });
+              controller.switchCamera();
+            }
+            else {
+              setState(() {
+                isFrontCamera = false;
+              });
+              controller.switchCamera();
+            }
+          }, icon: Icon(Icons.cameraswitch, color: isFrontCamera? Colors.blue : Colors.black87,)),
+        ],
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(context, true);
           },
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
@@ -78,6 +113,7 @@ class _MyScannerState extends State<MyScanner> {
                 child: Stack(
                   children: [
                     MobileScanner(
+                      controller: controller,
                       onDetect: (barcode, args) {
                         if (!isScanCompleted) {
                           String code = barcode.rawValue ?? '---';
