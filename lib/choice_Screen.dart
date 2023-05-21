@@ -10,7 +10,7 @@ class Home_Landing_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 145, 0),
+        backgroundColor:  Colors.deepPurpleAccent,
         centerTitle: true,
         title: const Text(
           'Fancy Qr Generator',

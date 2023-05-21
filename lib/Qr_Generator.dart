@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 145, 0),
+        backgroundColor:  Colors.deepPurpleAccent,
         centerTitle: true,
         title: const Text(
           'Fancy Qr Generator',
@@ -119,6 +119,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text(
                   "Share this App",
                 ),
+              ),
+              const SizedBox(
+                height: 200,
               ),
             ],
           ),

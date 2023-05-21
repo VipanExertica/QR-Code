@@ -65,7 +65,7 @@ class _MyScannerState extends State<MyScanner> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 145, 0),
+        backgroundColor:  Colors.deepPurpleAccent,
         centerTitle: true,
         title: const Text(
           'Fancy Qr Generator',

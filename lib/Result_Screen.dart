@@ -26,7 +26,7 @@ class MyScannedResult extends StatelessWidget {
             color: Colors.black87,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 145, 0),
+        backgroundColor:  Colors.deepPurpleAccent,
         centerTitle: true,
         title: const Text(
           'Fancy Qr Generator',
